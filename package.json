@@ -1,11 +1,11 @@
 {
   "name": "slack-unread-report",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "get unread messages report",
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "prepublish": "babel src --out-dir lib"
+    "prepare": "babel src --out-dir lib"
   },
   "babel": {
     "presets": [
