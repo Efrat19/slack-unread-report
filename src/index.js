@@ -39,7 +39,6 @@ async function main() {
     process.stdout.write(`you have ${sumUnread(responses)} unread messages at slack\n`);
   } catch (error) {
     process.stdout.write('error occurred :(\n are you sure SLACK_TOKEN and SLACK_USER environment vars are configured?');
-    console.log(error);
   }
 }
 
