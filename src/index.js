@@ -39,6 +39,7 @@ async function main() {
     process.stdout.write(`you have ${sumUnread(responses)} unread messages at slack\n`);
   } catch (error) {
     process.stdout.write('error occurred :(\n');
+    console.log(error);
   }
 }
 
