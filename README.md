@@ -1,4 +1,4 @@
-# slack-report
+# slack-unread-report
 get unread messages report
 
 ## Install
