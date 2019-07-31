@@ -1,0 +1,54 @@
+{
+  "name": "slack-report",
+  "version": "1.0.0",
+  "description": "get unread messages report",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint . --fix",
+    "prepublish": "babel src --out-dir lib"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Efrat19/slack-report.git"
+  },
+  "keywords": [
+    "slack",
+    "slack-api",
+    "messages"
+  ],
+  "author": "Efrat19",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Efrat19/slack-report/issues"
+  },
+  "homepage": "https://github.com/Efrat19/slack-report#readme",
+  "bin": {
+    "slack-report": "./lib/index.js"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.4.5",
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/node": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
