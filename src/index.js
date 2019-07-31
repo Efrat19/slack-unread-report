@@ -16,7 +16,6 @@ async function getUnread() {
       exclude_archived: true,
     },
   });
-  console.log(response.data.channels);
   return response && response.data && response.data.channels && Promise
     .all(response.data.channels
       .map(async channel => axios.get(GET_UNREAD, {
