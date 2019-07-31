@@ -2,8 +2,8 @@
 
 import axios from 'axios';
 
-const token = process.env.SLACK_TOKEN;
-const user = process.env.SLACK_USER;
+const token = process.env.SLACK_TOKEN || '';
+const user = process.env.SLACK_USER || '';
 const GET_CHANNELS = 'https://slack.com/api/users.conversations';
 const GET_UNREAD = 'https://slack.com/api/channels.history';
 
