@@ -1,5 +1,5 @@
 {
-  "name": "slack-report",
+  "name": "slack-unread-report",
   "version": "1.0.0",
   "description": "get unread messages report",
   "main": "index.js",
@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/Efrat19/slack-report#readme",
   "bin": {
-    "slack-report": "./lib/index.js"
+    "slack-unread-report": "./lib/index.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.4.5",
