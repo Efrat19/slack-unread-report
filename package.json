@@ -5,14 +5,11 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint . --fix",
-    "prepublishOnly": "babel src --out-dir lib"
+    "prepublish": "babel src --out-dir lib"
   },
   "babel": {
     "presets": [
       "@babel/preset-env"
-    ],
-    "plugins": [
-      "@babel/plugin-transform-runtime"
     ]
   },
   "repository": {
