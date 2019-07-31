@@ -10,11 +10,14 @@
   "babel": {
     "presets": [
       "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
     ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Efrat19/slack-report.git"
+    "url": "git+https://github.com/Efrat19/slack-unread-report.git"
   },
   "keywords": [
     "slack",
@@ -24,9 +27,9 @@
   "author": "efrat19",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Efrat19/slack-report/issues"
+    "url": "https://github.com/Efrat19/slack-unread-report/issues"
   },
-  "homepage": "https://github.com/Efrat19/slack-report#readme",
+  "homepage": "https://github.com/Efrat19/slack-unread-report#readme",
   "bin": {
     "slack-unread-report": "./lib/index.js"
   },
