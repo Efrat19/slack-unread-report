@@ -4,4 +4,4 @@
 - Add num-only support
 - Better errors handling
 
-#### Env vars support is still there for backward compatibility
+#### Env vars support is still there for backwards compatibility
