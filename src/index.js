@@ -1,9 +1,19 @@
 #!/usr/bin/env node
 
 import axios from 'axios';
+import minimist from 'minimist';
 
-const token = process.env.SLACK_TOKEN || '';
-const user = process.env.SLACK_USER || '';
+const args = minimist(process.argv.slice(2));
+
+
+function missingArg(arg) {
+  process.stdout.write(`missing required argument ${arg}\n`);
+  process.exit(2);
+}
+
+const token = args.token || process.env.SLACK_TOKEN || missingArg('token');
+const user = args.user || process.env.SLACK_USER || missingArg('user');
+const numOnly = args.numOnly || false;
 const GET_CHANNELS = 'https://slack.com/api/users.conversations';
 const GET_UNREAD = 'https://slack.com/api/channels.history';
 
@@ -36,9 +46,16 @@ function sumUnread(responses) {
 async function main() {
   try {
     const responses = await getUnread();
-    process.stdout.write(`you have ${sumUnread(responses)} unread messages at slack\n`);
+    if (numOnly) {
+      process.stdout.write(sumUnread(responses));
+      process.exit(0);
+    } else {
+      process.stdout.write(`you have ${sumUnread(responses)} unread messages at slack\n`);
+      process.exit(0);
+    }
   } catch (error) {
     process.stdout.write('error occurred :(\n are you sure SLACK_TOKEN and SLACK_USER environment vars are configured?');
+    process.exit(1);
   }
 }
 
