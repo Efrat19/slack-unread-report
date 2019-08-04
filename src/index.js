@@ -13,7 +13,7 @@ function missingArg(arg) {
 
 const token = args.token || process.env.SLACK_TOKEN || missingArg('token');
 const user = args.user || process.env.SLACK_USER || missingArg('user');
-const numOnly = args.numOnly || false;
+const numOnly = args['num-only'] || false;
 const GET_CHANNELS = 'https://slack.com/api/users.conversations';
 const GET_UNREAD = 'https://slack.com/api/channels.history';
 
@@ -47,14 +47,13 @@ async function main() {
   try {
     const responses = await getUnread();
     if (numOnly) {
-      process.stdout.write(sumUnread(responses));
-      process.exit(0);
+      process.stdout.write(String((sumUnread(responses))));
     } else {
       process.stdout.write(`you have ${sumUnread(responses)} unread messages at slack\n`);
-      process.exit(0);
     }
+    process.exit(0);
   } catch (error) {
-    process.stdout.write('error occurred :(\n are you sure SLACK_TOKEN and SLACK_USER environment vars are configured?');
+    process.stdout.write('error occurred :(\n');
     process.exit(1);
   }
 }
